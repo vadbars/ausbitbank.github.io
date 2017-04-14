@@ -66,7 +66,7 @@ function displayheader(profile,steemusername){
 
 function loadnext(author,permlink){console.log('loadnext '+author+' '+permlink);document.getElementById('loadmore').onclick=function(e){e.preventDefault();loader();loadblogposts(s['steemusername'],20,author,permlink);}}
 
-function timeSince(a){var b=Math.floor((new Date-a)/1e3),c=Math.floor(b/31536e3);return c>1?c+" years":(c=Math.floor(b/2592e3))>1?c+" months":(c=Math.floor(b/86400))>1?c+" days":(c=Math.floor(b/3600))>1?c+" hours":(c=Math.floor(b/60),c>1?c+" minutes":Math.floor(b)+" seconds")}
+function timeSince(a){var b=Math.floor((new Date-a)/1e3),c=Math.floor(b/31536e3);return c>1?c+" лет":(c=Math.floor(b/2592e3))>1?c+" месяцев":(c=Math.floor(b/86400))>1?c+" дней":(c=Math.floor(b/3600))>1?c+" часов":(c=Math.floor(b/60),c>1?c+" минут":Math.floor(b)+" секунд")}
 
 function displayposts(posts){
   loader(); var postcontent='';
@@ -75,7 +75,7 @@ function displayposts(posts){
     var timesincepost=new Date(posts[i]['last_update']);
     var jsonmeta=JSON.parse(posts[i]['json_metadata']);
     postcontent += '<div class="postblock"><div class="postheader"><h3><a href="'+s['steemsite']+'/@'+posts[i]['author']+'/'+posts[i]['permlink']+'">'+posts[i]['title']+'</a></h3>';
-    postcontent += 'Написал <a href="'+s['steemsite']+'/@'+posts[i]['author']+'"><i class="fa fa-user-circle" aria-hidden="true"></i> '+posts[i]['author']+'</a> '+timeSince(timesincepost)+' ago <br /><i class="fa fa-tags" aria-hidden="true"></i> '+jsonmeta['tags'].toString()+'<br /><i class="fa fa-clock-o" aria-hidden="true"></i> '+readtime(posts[i]['body'])+'<br />'+votebutton(posts[i]['author'],posts[i]['permlink'])+'</div>';
+    postcontent += 'Написал <a href="'+s['steemsite']+'/@'+posts[i]['author']+'"><i class="fa fa-user-circle" aria-hidden="true"></i> '+posts[i]['author']+'</a> '+timeSince(timesincepost)+' назад <br /><i class="fa fa-tags" aria-hidden="true"></i> '+jsonmeta['tags'].toString()+'<br /><i class="fa fa-clock-o" aria-hidden="true"></i> '+readtime(posts[i]['body'])+'<br />'+votebutton(posts[i]['author'],posts[i]['permlink'])+'</div>';
     postcontent += '<div class="post" id="'+posts[i]['author']+'/'+posts[i]['permlink']+'">'+posts[i]['body']+'</div><hr>'+socialshare('@'+posts[i]['author']+'/'+posts[i]['permlink'],posts[i]['title']);
     postcontent += '<div class="center" id="commentblock-'+posts[i]['author']+'/'+posts[i]['permlink']+'"><button class="button grow" id="loadcomments" onClick="loadcomments(\''+posts[i]['author']+'\',\''+posts[i]['permlink']+'\',false);"><i class="fa fa-comments" aria-hidden="true"></i> View '+posts[i]['children']+' comments</button><br />'+tiplink(posts[i]['author'],posts[i]['title'])+'</div></div>';
     if (i==posts.length-1){
