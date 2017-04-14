@@ -1,6 +1,8 @@
 # vadbars.github.io
+Минималистичный блог с сообщениями и комментариями из блокчейна Golos 
 minimalist blog pulling post data from the Golos blockchain
 
+====
 Forked from
 # ausbitbank.github.io
 minimalist blog pulling post data from the steem blockchain
