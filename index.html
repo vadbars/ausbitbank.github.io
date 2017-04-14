@@ -81,7 +81,7 @@ function displayposts(posts){
     if (i==posts.length-1){
       author=posts[posts.length-1]['author'];
       permlink=posts[posts.length-1]['permlink'];
-      if(posts.length>0){postcontent+='\n<div class="center"><button class="button grow" id="loadmore"><i class="fa fa-refresh" aria-hidden="true"></i> Load More Posts</button></div>';} else { postcontent+='\n<div class="center"><a href="/"><button class="button grow">Return to home page</button></a></div>';}
+      if(posts.length>0){postcontent+='\n<div class="center"><button class="button grow" id="loadmore"><i class="fa fa-refresh" aria-hidden="true"></i> Еще публикации</button></div>';} else { postcontent+='\n<div class="center"><a href="/"><button class="button grow">Назад на главную</button></a></div>';}
       c.innerHTML=postcontent;
       if(posts.length>0){loadnext(posts[posts.length-1]['author'],posts[posts.length-1]['permlink']);}
     }
@@ -177,7 +177,7 @@ function displaycomments(comments,handle,nest){
   document.getElementById(handle).innerHTML=commentsdiv;
 }
 
-function readtime(a){var b=270,c=b/60,d=a.trim().split(/\s+/g).length,e=d/c,f=Math.round(e/60);Math.round(e-60*f);return f<1?"Less than a minute read":f+" min read"}
+function readtime(a){var b=270,c=b/60,d=a.trim().split(/\s+/g).length,e=d/c,f=Math.round(e/60);Math.round(e-60*f);return f<1?"Меньше минуты чтения":f+" минут чтения"}
 
 if (redirect && redirect != location.href) {
   history.replaceState(null, null, redirect);
