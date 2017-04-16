@@ -1,5 +1,7 @@
-# gitblog.github.io
+# vadbars / gitblog.github.io
 Минималистичный блог с сообщениями и комментариями из блокчейна Golos 
+
+https://golos.io/ru--otkrytyij-kod/@vadbars/eshe-raz-pro-svoi-golos-blog-bez-khostinga-i-programmirovaniya
 
 minimalist blog pulling post data from the Golos blockchain
 
